@@ -76,5 +76,145 @@ Phần A
     Lỗi 11 — Dòng 45 — Thẻ <footer> chứa <p> nhưng không đóng </p> — Thêm </p> trước </footer>.
     Lỗi 12 — Dòng 48 — Thẻ <html> không đóng — Thêm </html>
 
+#C1.
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Trang chủ</a>
+            <a href="#">Danh mục</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb"> <!-- nav vì đây là điều hướng -->
+            <ol> <!-- ol vì breadcrumb có thứ tự -->
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Điện thoại</a></li>
+                <li>iPhone 16</li>
+            </ol>
+        </nav>
+
+        <!--SẢN PHẨM -->
+        <section>
+            <article> <!-- article vì đây là nội dung độc lập -->
+                <!--Ảnh -->
+                <section>
+                    <figure> <!-- figure dùng để chứa hình ảnh -->
+                        <img src="#" alt="Ảnh sản phẩm 1">
+                        <figcaption>Ảnh 1</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="#" alt="Ảnh sản phẩm 2">
+                        <figcaption>Ảnh 2</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="#" alt="Ảnh sản phẩm 3">
+                        <figcaption>Ảnh 3</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="#" alt="Ảnh sản phẩm 4">
+                        <figcaption>Ảnh 4</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="#" alt="Ảnh sản phẩm 5">
+                        <figcaption>Ảnh 5</figcaption>
+                    </figure>
+                </section>
+
+                <!-- Thông tin sản phẩm -->
+                <section>
+                    <h1>Tên sản phẩm</h1> <!-- Tiêu đề chính -->
+
+                    <p>Giá: <strong>36.990.000đ</strong></p> <!-- strong để nhấn mạnh giá -->
+
+                    <p>Đánh giá: ⭐⭐⭐⭐⭐</p> <!-- hiển thị rating -->
+
+                    <p>Mô tả sản phẩm...</p> <!-- mô tả -->
+                </section>
+
+                <!-- Bảng thông số kỹ thuật-->
+                <section>
+                    <h2>Thông số kỹ thuật</h2>
+
+                    <table> <!-- Table vì dữ liệu ở dạng bảng-->
+                        <thead> <!-- Tiêu đề bảng-->
+                            <tr>
+                                <th>Thông số</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody> <!-- Nội dung bảng-->
+                            <tr>
+                                <td>Chip</td>
+                                <td>A18 Bionic</td>
+                            </tr>
+                            <tr>
+                                <td>Bộ nhớ</td>
+                                <td>128GB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Đánh giá/Bình luận-->
+                <section>
+                    <h2>Đánh giá</h2>
+
+                    <!-- article vì mỗi comment là 1 nội dung độc lập -->
+                    <article>
+                        <p><strong>Người dùng A</strong></p>
+                        <p>Sản phẩm tốt!</p>
+                    </article>
+
+                    <article>
+                        <p><strong>Người dùng B</strong></p>
+                        <p>Giá hơi cao.</p>
+                    </article>
+                </section>
+
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Sidebar-->
+    <aside>
+        <h2>Sản phẩm tương tự</h2>
+        <article>
+            <p>iPhone 15 Pro</p>
+            <p><strong>22.990.000đ</strong></p>
+        </article>
+
+        <article>
+            <p>Samsung Galaxy S24</p>
+            <p><strong>20.990.000đ</strong></p>
+        </article>
+
+        <article>
+            <p>Xiaomi 14</p>
+            <p><strong>15.990.000đ</strong></p>
+        </article>
+    </aside>
+
+    <!-- Footer chứa thông tin cuối trang -->
+    <footer>
+        <p>&copy; 2026</p>
+    </footer>
+
+</body>
+</html>
+
     
 
