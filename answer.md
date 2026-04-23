@@ -1,13 +1,11 @@
 Phần A
 #A1. 
     1. Khi người dùng truy cập shopee.vn và ấn enter, trình duyệt thực hiện các bước:
-    - Request xuất phát từ laptop, đi qua router WiFi
-    - Trình duyệt hỏi DNS tìm địa chỉ IP
-    - Thiết lập kết nối TCP và bảo mật TLS với server Shopee
-    - Gửi HTTP request đến server
-    - Server nhận request -> xử lý -> trả về HTTP response (HTML)
-    - Trình duyệt nhận HTML -> tiếp tục tải thêm CSS, JavaScript, hình ảnh
-    - Chrome phân tích -> render giao diện -> trang Shopee hiện ra
+    B1: Nhập shopee.vn
+    B2: Máy tìm địa chỉ IP của website
+    B3: Kết nối tới server
+    B4: Gửi yêu cầu xin dữ liệu
+    B5: Server trả về dữ liệu, sau đó trình duyệt hiển thị trang web
 
     2. Trong DevTools của Chrome, tab Network hiển thị:
     - Danh sách các request
