@@ -14,6 +14,8 @@ Phần A
     - Thời gian tải(Time)
     - Kích thước dữ liệu(Size)
     - Tổng thời gian load trang(finish)
+    ![Uploading Screenshot 2026-04-19 223439.png…]()
+
 
 #A2.
     Trang web dưới đây bị Google đánh giá SEO thấp vì lạm dụng <div>.
