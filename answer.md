@@ -61,5 +61,5 @@ Phần A
     KHÔNG NÊN dùng table để tạo layout trang web vì:
     - Table dùng để chứa dữ liệu bảng, không phải để chia layout web
     - Table phải load xong toàn bộ mới hiển thị đúng nên trang web sẽ bị tải chậm
-    - 
+    
 
