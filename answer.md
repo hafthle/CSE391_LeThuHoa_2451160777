@@ -76,6 +76,22 @@ Phần A
     Lỗi 11 — Dòng 45 — Thẻ <footer> chứa <p> nhưng không đóng </p> — Thêm </p> trước </footer>.
     Lỗi 12 — Dòng 48 — Thẻ <html> không đóng — Thêm </html>
 
+    #B4.
+    1. 
+    Semantic HTML
+    - <header>: nằm ở phần đầu trang (class="header v2024")
+    - <footer>: nằm ở cuối trang (class="footer v2024")
+    - <h1>: Tiêu đề chính của trang
+    Không dùng semantic
+    - <div class="header-top-bar">: dùng div thay vì header
+    - <div id="shopPromoteBHX">: dùng div thay vì section hoặc article
+    2.
+    3. action:"/tim-kiem"
+       method: Get
+       Input type: "text" và "submit"
+       <input type="text">
+       <input button="submit">
+
 #C1.
 
 <!DOCTYPE html>
