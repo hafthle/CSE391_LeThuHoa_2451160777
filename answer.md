@@ -76,7 +76,7 @@ Phần A
     Lỗi 11 — Dòng 45 — Thẻ <footer> chứa <p> nhưng không đóng </p> — Thêm </p> trước </footer>.
     Lỗi 12 — Dòng 48 — Thẻ <html> không đóng — Thêm </html>
 
-    #B4.
+ #B4.
     1. 
     Semantic HTML
     - <header>: nằm ở phần đầu trang (class="header v2024")
