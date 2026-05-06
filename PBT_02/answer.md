@@ -39,3 +39,15 @@
 <--Ví dụ-->
 - Cách 1: ảnh logo cửa hàng, ảnh thumbnail sản phẩm hiển thị đơn giản.
 - Cách 2: ảnh sản phẩm kèm giá, ảnh bài viết kèm chú thích nội dung.
+
+## PHẦN B
+
+# B1
+- `register.html` đã có 3 fieldset, `legend`, `label for`, `placeholder`, validation `required`, `pattern`, `minlength`, `maxlength`.
+- Trường xác nhận password cần JavaScript hoặc backend để so sánh đúng với password, nên HTML chỉ giới hạn cùng pattern/độ dài.
+
+# B2
+- `media.html` có 3 ảnh sản phẩm với `<figure>` + `<figcaption>` + `loading="lazy"`, iframe YouTube, `<video>` với 2 source, `<audio>`, inline SVG.
+
+# B3
+- `checkout.html` có bảng giỏ hàng với `<tfoot>`, form thanh toán radio, mã khuyến mãi `pattern="SALE[0-9]{4}"`, ngày giao hàng `min="2026-05-07"`, select khung giờ, `range`, `datalist`, `output`, `meter`.
