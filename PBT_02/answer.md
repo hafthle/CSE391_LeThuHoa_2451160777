@@ -51,3 +51,33 @@
 
 # B3
 - `checkout.html` có bảng giỏ hàng với `<tfoot>`, form thanh toán radio, mã khuyến mãi `pattern="SALE[0-9]{4}"`, ngày giao hàng `min="2026-05-07"`, select khung giờ, `range`, `datalist`, `output`, `meter`.
+
+
+## PHẦN C 
+
+# Câu C1 — Debug form
+Lỗi 1: Input "Tên" không có `<label for="...">`, vi phạm accessibility.
+Sửa: `<label for="name">Tên:</label> <input type="text" id="name" name="name" required>`
+
+Lỗi 2: Input email không có `id` và label cụ thể. Cần có `<label for="email">Email của bạn:</label>`.
+
+Lỗi 3: Hai trường password không có `label`, không có `id`, không có `name` rõ ràng.
+Sửa: thêm 2 label riêng cho mật khẩu và xác nhận mật khẩu.
+
+Lỗi 4: Input phone sử dụng `type="text"` nhưng nên dùng `type="tel"` để phù hợp với số điện thoại và keyboard di động.
+
+Lỗi 5: `select` không có `name` và `id`, không có label, nên thêm `<label for="city">Thành phố:</label>`.
+
+Lỗi 6: `<label>` cho checkbox không đóng đủ nội dung và không có `for` hoặc `id` liên kết rõ ràng.
+Sửa: `<input type="checkbox" id="agree" name="agree" required> <label for="agree">Tôi đồng ý điều khoản</label>`.
+
+Lỗi 7: Form không có `action` hoặc `method`, nên thêm `action="#" method="POST"`.
+
+Lỗi 8: Input submit không đủ rõ ràng; nên dùng `<button type="submit">Gửi</button>` để cải thiện khả năng tùy chỉnh.
+
+# Câu C2 
+1. `pattern` cho CMND/CCCD: `pattern="[0-9]{12}"`
+2. `pattern` cho số tài khoản: `pattern="[0-9]{10,15}"`
+3. HTML5 validation không đủ an toàn cho ngân hàng vì có thể bị bỏ qua hoặc giả mạo phía client. Phải kiểm tra lại mọi dữ liệu ở backend để đảm bảo an toàn.
+4. Ba loại validation HTML5 không làm được: kiểm tra giá trị trùng lặp với cơ sở dữ liệu, so sánh cross-field (ví dụ password và confirm password), và kiểm tra logic phức tạp như điều kiện ngày/thời gian tùy theo trạng thái khác.
+5. Hai rủi ro nếu chỉ validate frontend: kẻ tấn công có thể gửi request thủ công đến server với dữ liệu độc hại, hoặc bypass validation bằng cách tắt JavaScript / sửa HTML.
