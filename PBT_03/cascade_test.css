@@ -1,0 +1,52 @@
+body {
+    font-size: 16px;
+    color: #333;
+}
+
+.container {
+    font-size: 14px;
+}
+
+.card {
+    color: blue;
+}
+
+.card .title {
+    font-size: 20px;
+}
+
+.card p {
+    color: inherit;
+}
+
+#featured .title {
+    color: red;
+}
+
+.highlight {
+    color: green !important;
+}
+
+body {
+    background: #f7fbff;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    padding: 20px
+}
+
+.container {
+    max-width: 600px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(20, 30, 60, 0.06)
+}
+
+.card {
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #eef
+}
+
+.title {
+    margin: 0 0 8px
+}
