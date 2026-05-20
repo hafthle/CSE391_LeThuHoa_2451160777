@@ -154,6 +154,23 @@ p.price { color: green; }             /* Rule D */
 - Descendant selector: `header nav ul li a`.
 - Pseudo-classes: `a:hover`, `tr:hover`, `tr:nth-child(even)`.
 
+### Bài B2 (20đ) — Box Model Lab
+
+Phần 1 — Content-box vs Border-box
+
+- Hộp 1 (content-box): chiều rộng thực tế = 350 px (300px width + 20px padding ×2 + 5px border ×2)
+- Hộp 2 (border-box): chiều rộng thực tế = 300 px (width 300px đã bao gồm padding và border)
+
+Giải thích sự khác biệt:
+
+Content-box là chế độ mặc định: thuộc tính `width` chỉ áp dụng cho phần content bên trong; padding và border được cộng thêm vào khiến tổng chiều rộng hiển thị = content width  + 2×padding + 2×border. Ở ví dụ này: 300 + 40 + 10 = 350px.
+
+Border-box: `width` bao gồm cả padding và border nên tổng chiều rộng hiển thị bằng đúng giá trị `width` khai báo (300px). Vì vậy cùng một `width`+`padding`+`border` cho hai chế độ sẽ dẫn tới kết quả khác nhau trong kích thước hiển thị.
+
+Phần 2 — Layout 3 cột
+
+- Phiên bản `border-box`: tổng chiều rộng 3 cột = 1000px (ghi kết quả và đính kèm screenshot DevTools).
+- Phiên bản `content-box`: tổng chiều rộng 3 cột = ___ px (ghi kết quả và đính kèm screenshot DevTools showing overflow > 1000px).
 
 ### Câu C1 (10đ) — Debug CSS Layout
 

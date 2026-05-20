@@ -1,0 +1,130 @@
+/* Box model lab styles */
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f3f6fb;
+    color: #111;
+    padding: 20px;
+}
+
+.lab {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-weight: 700;
+    margin: 8px 0 14px;
+}
+
+.part1 {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #273444;
+    background: #fff;
+}
+
+.box .label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.box .note {
+    font-size: 0.9rem;
+    color: #556;
+}
+
+.box.content-box {
+    box-sizing: content-box;
+}
+
+.box.border-box {
+    box-sizing: border-box;
+}
+
+.three-wrap {
+    margin-top: 32px;
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+}
+
+.three-title {
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.three-col {
+    width: 1000px;
+    display: flex;
+}
+
+.three-col .col {}
+
+.three-col.border-box .col {
+    box-sizing: border-box;
+}
+
+.three-col.border-box .left {
+    width: 250px;
+    padding: 15px;
+    background: #fff9f0;
+}
+
+.three-col.border-box .center {
+    width: 500px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.three-col.border-box .right {
+    width: 250px;
+    padding: 15px;
+    background: #f0fff6;
+}
+
+.three-col.content-box .col {
+    box-sizing: content-box;
+}
+
+.three-col.content-box .left {
+    width: 250px;
+    padding: 15px;
+    background: #fff9f0;
+}
+
+.three-col.content-box .center {
+    width: 500px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.three-col.content-box .right {
+    width: 250px;
+    padding: 15px;
+    background: #f0fff6;
+}
+
+/* helper visuals */
+.col {
+    border: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+.hint {
+    font-size: 0.9rem;
+    color: #334;
+    margin-top: 8px;
+}
+
+@media (max-width:1100px) {
+
+    .three-col,
+    .lab {
+        width: 100%;
+    }
+}

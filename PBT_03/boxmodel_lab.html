@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Box Model Lab</title>
+    <link rel="stylesheet" href="boxmodel.css">
+    <style>
+        body {
+            background: #f3f6fb
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lab">
+        <h1 class="section-title">Box Model Lab</h1>
+
+        <h2>Phần 1 — Content-box vs Border-box</h2>
+            <div class="box content-box">
+                <div class="label">Hộp 1 — content-box</div>
+                <div class="note">Box sizing: <code>content-box</code></div>
+            </div>
+
+            <div class="box border-box">
+                <div class="label">Hộp 2 — border-box</div>
+                <div class="note">Box sizing: <code>border-box</code></div>
+            </div>
+        </div>
+
+        <h2 class="three-title">Phần 2 — Layout 3 cột</h2>
+        <div class="three-wrap">
+            <div>
+                <strong>Phiên bản (box-sizing: border-box)</strong>
+                <div class="three-col border-box">
+                    <div class="col left">Left (250px width, padding:15px)</div>
+                    <div class="col center">Center (500px width, padding:20px)</div>
+                    <div class="col right">Right (250px width, padding:15px)</div>
+                </div>
+            </div>
+
+            <div>
+                <strong>Phiên bản (box-sizing: content-box)</strong>
+                <div class="three-col content-box">
+                    <div class="col left">Left (250px width, padding:15px)</div>
+                    <div class="col center">Center (500px width, padding:20px)</div>
+                    <div class="col right">Right (250px width, padding:15px)</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
