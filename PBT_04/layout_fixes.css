@@ -1,0 +1,184 @@
+:root {
+    --gap: 16px;
+    --accent: #1f7a8c
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    margin: 0;
+    background: #f5f6f7;
+    color: #111
+}
+
+.page-header {
+    background: #fff;
+    padding: 18px 24px;
+    border-bottom: 1px solid #eee
+}
+
+.examples {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+.issue {
+    margin-bottom: 40px
+}
+
+.compare {
+    display: flex;
+    gap: 16px
+}
+
+.panel {
+    flex: 1;
+    background: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04)
+}
+
+.panel h3 {
+    margin-top: 0
+}
+
+/* ----------------- Issue 1: Cards ----------------- */
+.card-container.broken {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.card-container.broken .card {
+    width: 30%;
+    margin: 1.5%;
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 6px
+}
+
+.card-container.broken img {
+    width: 100%;
+    height: 80px;
+    background: #ddd;
+    display: block
+}
+
+.card-container.broken .btn {
+    padding: 10px
+}
+
+.card-container.fixed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px
+}
+
+.card-container.fixed .card {
+    flex: 0 0 calc(33.333% - 10.666px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    background: #fafafa;
+    padding: 12px;
+    border-radius: 6px
+}
+
+.card-container.fixed img {
+    width: 100%;
+    height: 80px;
+    background: #ddd;
+    display: block;
+    object-fit: cover
+}
+
+.card-container.fixed .btn {
+    margin-top: auto;
+    padding: 10px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px
+}
+
+/* ----------------- Issue 2: Hero ----------------- */
+.hero {
+    height: 220px;
+    background: #eef6f8;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.hero.broken {
+    display: flex
+}
+
+.hero.broken .hero-content {
+    margin: 0
+}
+
+.hero.fixed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.hero.fixed .hero-content {
+    max-width: 700px
+}
+
+/* make hero tall on page for screenshot clarity */
+.hero.broken,
+.hero.fixed {
+    height: 320px
+}
+
+/* ----------------- Issue 3: Sidebar ----------------- */
+.layout.broken {
+    display: flex
+}
+
+.layout.broken .sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 12px
+}
+
+.layout.broken .content {
+    flex: 1;
+    padding: 12px;
+    background: #fafafa
+}
+
+.layout.fixed {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start
+}
+
+.layout.fixed .sidebar {
+    flex: 0 0 250px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 6px
+}
+
+.layout.fixed .content {
+    flex: 1 1 0%;
+    min-width: 0;
+    padding: 12px;
+    background: #fafafa;
+    overflow-wrap: break-word
+}
+
+.page-footer {
+    padding: 14px;
+    text-align: center;
+    color: #666
+}

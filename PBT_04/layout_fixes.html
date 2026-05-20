@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layout Fixes — Before/After</title>
+    <link rel="stylesheet" href="layout_fixes.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Layout fixes — chụp màn hình</h1>
+        <p>Chụp từng vùng "Before" (trái) và "After" (phải).</p>
+    </header>
+
+    <main class="examples">
+        <section class="issue">
+            <h2>Lỗi 1 — Cards không đều chiều cao</h2>
+            <div class="compare">
+                <div class="panel">
+                    <h3>Trước</h3>
+                    <div class="card-container broken">
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm A</h3>
+                            <p>Mô tả</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm B</h3>
+                            <p>Mô tả  quá dàiiiiiiiiiiiiiiiiiiiiiiiii
+                                iiiiiiiiiiiiiiiiii</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm C</h3>
+                            <p>Mô tả</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Sau</h3>
+                    <div class="card-container fixed">
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm A</h3>
+                            <p>Mô tả</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm B</h3>
+                            <p>Mô tả quá dàiiiiiiiiiiiiiiiiiiiiiiiii
+                                iiiiiiiiiiiiiiiiii</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                        <div class="card">
+                            <img src="" alt="" />
+                            <h3>Sản phẩm C</h3>
+                            <p>Mô tả</p>
+                            <button class="btn">Mua</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="issue">
+            <h2>Lỗi 2</h2>
+            <div class="compare">
+                <div class="panel">
+                    <h3>Trước</h3>
+                    <div class="hero broken">
+                        <div class="hero-content">
+                            <h3>Welcome</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Sau</h3>
+                    <div class="hero fixed">
+                        <div class="hero-content">
+                            <h3>Welcome</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="issue">
+            <h2>Lỗi 3 — Sidebar bị co lại khi nội dung quá dài</h2>
+            <div class="compare">
+                <div>
+                    <div class="panel">
+                        <h3>Trước</h3>
+                        <div class="layout broken">
+                            <aside class="sidebar">Sidebar</aside>
+                            <div class="content">
+                                <p>Minh minh minh minh minh minh minh minh </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="panel">
+                        <h3>Sau</h3>
+                        <div class="layout fixed">
+                            <aside class="sidebar">Sidebar</aside>
+                            <div class="content">
+                                <p>Minh minh minh minh minh minh minh minh </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="page-footer">Sử dụng DevTools → chụp ảnh 'Before' / 'After' từng mục</footer>
+</body>
+
+</html>
