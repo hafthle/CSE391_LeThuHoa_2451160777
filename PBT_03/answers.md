@@ -145,6 +145,16 @@ p.price { color: green; }             /* Rule D */
 3. Nếu thêm style="color: orange;": Cam (orange) — Inline style thắng ID.
 
 4. Nếu Rule A thêm !important: Đen (black) — !important thắng tất cả, kể cả inline.
+
+### Bài B1 (20đ) — Style trang Profile
+
+- Element selectors: `body`, `table`, `img`, `footer`.
+- Class selectors: `.active`, `.highlight`.
+- ID selectors: `#about`, `#skills`, `#contact`.
+- Descendant selector: `header nav ul li a`.
+- Pseudo-classes: `a:hover`, `tr:hover`, `tr:nth-child(even)`.
+
+
 ### Câu C1 (10đ) — Debug CSS Layout
 
 1) Tính chiều rộng thực tế (content-box):
