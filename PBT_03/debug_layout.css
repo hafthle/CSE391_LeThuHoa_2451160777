@@ -1,0 +1,112 @@
+/* Sửa lỗi */
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    background: #f7fbff;
+    padding: 18px
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto 22px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 6px
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 8px
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background: #f0f6ff;
+    padding: 8px
+}
+
+.panel {
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px
+}
+
+.orig .sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #fff8f0
+}
+
+.orig .content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #f8fff8
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+/* Lỗi A*/
+.fix-a .sidebar,
+.fix-a .content {
+    box-sizing: border-box;
+}
+
+.fix-a .sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #fff8f0
+}
+
+.fix-a .content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #f8fff8
+}
+
+/* Lỗi B*/
+.fix-b .sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #fff8f0
+}
+
+.fix-b .content {
+    width: 556px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #f8fff8
+}
+
+.note {
+    font-size: 0.95rem;
+    color: #334;
+    margin-top: 8px
+}
+
+@media (max-width:1000px) {
+    .container {
+        width: 100%;
+    }
+
+    .sidebar,
+    .content {
+        float: none;
+        width: auto
+    }
+}

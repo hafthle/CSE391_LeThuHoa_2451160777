@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Debug Layout</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">Original (broken) — content-box mặc định</div>
+        <div class="panel container orig clearfix">
+            <div class="sidebar">Sidebar<br><small>width:300px; padding:20px; border:1px</small></div>
+            <div class="content">Content<br><small>width:660px; padding:30px; border:1px</small></div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="title">Fix A — Dùng <code>box-sizing: border-box</code></div>
+        <div class="panel container fix-a clearfix">
+            <div class="sidebar">Sidebar (box-sizing:border-box)</div>
+            <div class="content">Content (box-sizing:border-box)</div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="title">Fix B — Giữ content-box nhưng hiệu chỉnh width</div>
+        <div class="panel container fix-b clearfix">
+            <div class="sidebar">Sidebar (300px + padding/border)</div>
+            <div class="content">Content (556px + padding/border)</div>
+        </div>
+    </div>
+</body>
+
+</html>
