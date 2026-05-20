@@ -145,3 +145,25 @@ p.price { color: green; }             /* Rule D */
 3. Nếu thêm style="color: orange;": Cam (orange) — Inline style thắng ID.
 
 4. Nếu Rule A thêm !important: Đen (black) — !important thắng tất cả, kể cả inline.
+### Câu C1 (10đ) — Debug CSS Layout
+
+1) Tính chiều rộng thực tế (content-box):
+
+- Sidebar: declared = 300px; padding = 20px ×2 = 40px; border = 1px ×2 = 2px → actual = 300 + 40 + 2 = 342 px.
+- Content: declared = 660px; padding = 30px ×2 = 60px; border = 1px ×2 = 2px → actual = 660 + 60 + 2 = 722 px.
+- Tổng actual = 342 + 722 = 1064 px (> container 960px) → content bị đẩy xuống dòng.
+
+2) Vì sao layout bị vỡ
+
+- Vì đang dùng `content-box` (mặc định): `width` chỉ áp dụng cho phần content; padding và border được cộng thêm vào tổng kích thước. Do đó hai cột chiếm >960px nên không còn chỗ để nằm cạnh nhau.
+
+3) Hai cách sửa
+
+- Cách 1 (dùng `border-box`):
+    - Thêm `.sidebar, .content { box-sizing: border-box; }` (hoặc `*{box-sizing:border-box}` global).
+    - Khi đó declared width đã bao gồm padding+border ⇒ sidebar actual = 300, content actual = 660 ⇒ tổng = 960 (khít).
+
+- Cách 2 (không dùng `border-box`):
+    - Giữ `content-box` nhưng hiệu chỉnh width để bù padding+border.
+    - Tổng extra = sidebar_extra + content_extra = (40+2) + (60+2) = 104. Do đó s + c phải = 960 - 104 = 856. Giữ s = 300 ⇒ c = 556.
+    - Đổi `.content { width:556px; }` → actual tổng = 342 + (556+60+2) = 960.
