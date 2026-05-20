@@ -172,6 +172,30 @@ Phần 2 — Layout 3 cột
 - Phiên bản `border-box`: tổng chiều rộng 3 cột = 1000px (ghi kết quả và đính kèm screenshot DevTools).
 - Phiên bản `content-box`: tổng chiều rộng 3 cột = ___ px (ghi kết quả và đính kèm screenshot DevTools showing overflow > 1000px).
 
+### Bài B3 (15đ) — Specificity Battle
+
+1) Danh sách 10 rules (theo file `PBT_03/specificity.css`) và điểm specificity (id-class-element):
+
+- `p { color: #777777; }` — Specificity: 0-0-1
+- `body p { color: #0066cc; }` — Specificity: 0-0-2
+- `section article p { color: #008000; }` — Specificity: 0-0-3
+- `.text { color: #aa00aa; }` — Specificity: 0-1-0
+- `[class~="text"] { color: #ff6600; }` — Specificity: 0-1-0
+- `div .text { color: #0000ff; }` — Specificity: 0-1-1
+- `.text.highlight { color: #ff1493; }` — Specificity: 0-2-0
+- `#demo { color: #00ced1; }` — Specificity: 1-0-0
+- `#demo.text { color: #8b0000; }` — Specificity: 1-1-0
+- `html body section article #demo.text.highlight { color: #000000; }` — Specificity: 1-2-4
+
+2) Element cuối cùng hiển thị màu gì? Tại sao?
+
+- Hiển thị màu: `#000000` (đen). Vì rule cuối cùng (`html body section article #demo.text.highlight`) có specificity cao nhất (1-2-4) nên nó thắng mọi rule khác mặc dù tất cả đều target cùng phần tử.
+
+4) Thay đổi thứ tự rules trong CSS file. Kết quả có đổi không? Giải thích.
+
+- Nếu đổi thứ tự giữa các rules có specificity khác nhau (ví dụ một rule có class vs một rule có id), rule có specificity cao hơn luôn thắng bất kể thứ tự xuất hiện. Vì vậy thay đổi thứ tự không làm thay đổi kết quả khi specificity khác nhau.
+- Nếu có hai rules có specificity bằng nhau (ví dụ `.text {}` và `[class~="text"] {}` đều 0-1-0), thì rule xuất hiện sau trong file sẽ thắng (cascade by source order). Vì vậy thay đổi thứ tự giữa các rules cùng specificity sẽ thay đổi màu hiển thị.
+
 ### Câu C1 (10đ) — Debug CSS Layout
 
 1) Tính chiều rộng thực tế (content-box):

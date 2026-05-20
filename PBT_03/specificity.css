@@ -1,0 +1,51 @@
+/* Specificity demo - 10 rules ordered low -> high specificity */
+
+/* 1: element selector (0,0,1) */
+p {
+    color: #777777;
+}
+
+/* 2: descendant element selector (0,0,2) */
+body p {
+    color: #0066cc;
+}
+
+/* 3: deeper descendant elements (0,0,3) */
+section article p {
+    color: #008000;
+}
+
+/* 4: class selector (0,1,0) */
+.text {
+    color: #aa00aa;
+}
+
+/* 5: attribute selector (0,1,0) - same class specificity as .text */
+[class~="text"] {
+    color: #ff6600;
+}
+
+/* 6: element + class (0,1,1) */
+div .text {
+    color: #0000ff;
+}
+
+/* 7: two classes (0,2,0) */
+.text.highlight {
+    color: #ff1493;
+}
+
+/* 8: ID selector (1,0,0) */
+#demo {
+    color: #00ced1;
+}
+
+/* 9: ID + class (1,1,0) */
+#demo.text {
+    color: #8b0000;
+}
+
+/* 10: ID + multiple classes + elements (1,2,4) - highest specificity here */
+html body section article #demo.text.highlight {
+    color: #000000;
+}
