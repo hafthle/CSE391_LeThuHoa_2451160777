@@ -320,3 +320,218 @@ Có thay đổi theo kích thước màn hình.
    - Tablet: Font tăng nhẹ giúp dễ đọc hơn và cân bằng với kích thước màn hình trung bình.
    - Desktop: Font lớn và thoáng hơn; tiêu đề, menu và nội dung dễ nhìn hơn trên màn hình rộng.
     Website sử dụng responsive typography để cải thiện readability trên từng thiết bị.
+
+### Câu C2 (10đ) — Thiết kế trang "Đặt bàn nhà hàng" (Wireframe & CSS skeleton)
+
+Wireframe (theo Mobile-First):
+
+Mobile (≤ 767px)
+[HEADER]
+  Logo      Hotline đặt bàn
+
+[HERO IMAGE]
+  (ảnh full chiều ngang)
+
+[FORM ĐẶT BÀN]
+  [Ngày]
+  [Giờ]
+  [Số người]
+  [Ghi chú]
+  [Nút đặt bàn]
+
+[GALLERY MÓN ĂN]
+  ▢
+  ▢
+  ▢
+  ▢
+  ▢
+  ▢
+  (1 cột)
+
+{GOOGLE MAP: ẩn hoặc thu nhỏ}
+
+[FOOTER]
+
+Tablet (768px — 1023px)
+[HEADER]
+  Logo -------- Hotline đặt bàn
+
+[HERO IMAGE]
+  (banner rộng)
+
+[KHU VỰC CHÍNH]
+  [FORM ĐẶT BÀN]
+  (các input chia 2 cột)
+
+[GALLERY MÓN ĂN]
+  ▢ ▢
+  ▢ ▢
+  ▢ ▢
+  (lưới 2 cột)
+
+[GOOGLE MAP]
+  (hiển thị dưới gallery)
+
+[FOOTER]
+Desktop (≥ 1024px)
+[HEADER]
+  Logo ---------------- Hotline đặt bàn
+
+[HERO IMAGE]
+  (banner lớn toàn chiều ngang)
+
+[LAYOUT CHÍNH: 3 cột]
+
+  [TRÁI]
+    Sidebar:
+    - Khuyến mãi
+    - Giờ mở cửa
+    - Thông tin nhà hàng
+
+  [GIỮA]
+    GALLERY MÓN ĂN
+    ▢ ▢ ▢
+    ▢ ▢ ▢
+    (lưới 3 cột)
+
+  [PHẢI]
+    FORM ĐẶT BÀN
+    GOOGLE MAP
+
+[FOOTER]
+
+Các phần bị ẩn/di chuyển theo breakpoint:
+
+Mobile: Google Maps bị ẩn hoặc thu gọn; sidebar không hiển thị; gallery giảm còn 1 cột.
+Tablet: Gallery hiển thị 2 cột; Google Maps hiển thị dưới gallery; form chia 2 cột input.
+Desktop: Sidebar xuất hiện; gallery tăng lên 3 cột; form và Google Maps nằm bên phải.
+
+CSS skeleton (Mobile-First) — chỉ layout, dùng Grid + media queries
+
+/* Mobile-First */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+}
+
+.container{
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+  min-height:100vh;
+}
+
+/* Header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  background:#f5f5f5;
+}
+
+/* Hero */
+.hero{
+  width:100%;
+  height:220px;
+  background:#ccc;
+}
+
+/* Main */
+.main{
+  display:grid;
+  gap:16px;
+  padding:16px;
+}
+
+/* Form */
+.booking-form{
+  display:grid;
+  gap:12px;
+  padding:16px;
+  background:#fff;
+  border-radius:6px;
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.gallery img{
+  width:100%;
+  display:block;
+}
+
+/* Sidebar */
+.sidebar{
+  display:none;
+}
+
+/* Map */
+.map{
+  display:none;
+}
+
+/* Footer */
+.footer{
+  padding:16px;
+  text-align:center;
+  background:#eee;
+}
+
+/* Tablet */
+@media (min-width:768px){
+
+  .hero{
+    height:320px;
+  }
+
+  .booking-form{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .map{
+    display:block;
+    height:300px;
+    background:#ddd;
+  }
+}
+
+/* Desktop */
+@media (min-width:1024px){
+
+  .main{
+    grid-template-columns:220px 1fr 320px;
+    align-items:start;
+  }
+
+  .sidebar{
+    display:block;
+    padding:16px;
+    background:#f2f2f2;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .right-panel{
+    display:grid;
+    gap:16px;
+  }
+
+  .map{
+    height:400px;
+  }
+}
