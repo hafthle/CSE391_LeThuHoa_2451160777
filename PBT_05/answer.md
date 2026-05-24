@@ -287,3 +287,36 @@ sass --watch scss/style.scss dist/style.css
 ```
 
 Trong VS Code: cài extension **Live Sass Compiler**, nhấn "Watch Sass" ở thanh trạng thái dưới cùng — file CSS sẽ tự động tạo ra mỗi khi lưu `.scss`.
+
+### Câu C1 (10đ)
+**Navigation thay đổi thế nào?**
+- Mobile (375px): Thanh navigation bị thu gọn đáng kể để phù hợp màn hình nhỏ. Chỉ còn logo, ô tìm kiếm nhỏ và một phần menu chính. Các mục như tài khoản, địa chỉ giao hàng và nhiều shortcut bị ẩn. Không thấy menu ngang đầy đủ như desktop.
+- Tablet (768px): Navigation hiển thị nhiều hơn mobile. Thanh tìm kiếm dài hơn, các menu danh mục bắt đầu xuất hiện đầy đủ hơn theo dạng hàng ngang. Tuy nhiên vẫn chưa hiển thị toàn bộ chức năng như desktop.
+- Desktop (1440px): Navigation hiển thị đầy đủ theo chiều ngang gồm: logo, thanh tìm kiếm lớn, trang chủ, tài khoản, giỏ hàng, địa chỉ giao hàng.
+Không sử dụng hamburger menu trong ảnh desktop; thay vào đó là horizontal navigation đầy đủ.
+
+ **Lưới content thay đổi mấy cột?**
+- Mobile (< 768px):
+   + Layout gần như còn 1 cột chính.
+   + Banner và sản phẩm hiển thị theo chiều dọc.
+   + Sidebar danh mục bị thu hẹp đáng kể.
+- Tablet (≥ 768px và < 1024px):
+   + Layout khoảng 2 cột.
+   + Một cột sidebar danh mục bên trái và một cột nội dung/banner bên phải.
+- Desktop (≥ 1024px):
+   + Layout mở rộng khoảng 3–4 cột nội dung.
+   + Banner lớn hiển thị song song.
+   + Hiển thị được nhiều icon dịch vụ và nhiều sản phẩm cùng lúc.
+    (Website thay đổi bố cục bằng responsive layout và media queries để tăng số cột khi màn hình rộng hơn.)
+
+- **Elements nào bị ẩn trên mobile?**
+    - `.sidebar` (filter) — ẩn trên mobile, hiển thị ở tablet/desktop.
+	- `.ads` (ads bar) — ẩn trên mobile và tablet, hiển thị ở desktop.
+	- `.main-nav` về mặt hiển thị mặc định bị ẩn trên mobile (thay bằng hamburger).
+
+- **Font size có thay đổi không?**
+Có thay đổi theo kích thước màn hình.
+   - Mobile: Font nhỏ hơn để vừa màn hình hẹp; khoảng cách giữa các chữ và menu cũng nhỏ hơn.
+   - Tablet: Font tăng nhẹ giúp dễ đọc hơn và cân bằng với kích thước màn hình trung bình.
+   - Desktop: Font lớn và thoáng hơn; tiêu đề, menu và nội dung dễ nhìn hơn trên màn hình rộng.
+    Website sử dụng responsive typography để cải thiện readability trên từng thiết bị.
