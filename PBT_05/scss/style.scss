@@ -1,0 +1,6 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+/* Additional page-level rules */
+footer { text-align: center; padding: $spacing-md 0; background: #fff; border-top: 1px solid #eee; }

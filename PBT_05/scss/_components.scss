@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  font-family: $font-primary;
+  color: #111;
+  background: #fafafa;
+  line-height: 1.4;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: $spacing-md; }
+
+.site-header {
+  background: #fff; border-bottom: 1px solid #eee;
+  .logo { font-weight: 700; font-size: 1.25rem; padding: $spacing-sm 0; }
+}
+
+.grid { display: grid; gap: $spacing-md; grid-template-columns: 1fr; }
+
+.card {
+  background: #fff; border-radius: 8px; padding: $spacing-md; border: 1px solid #eee; overflow: hidden;
+  @include card-shadow(0px, 0); // base no shadow
+
+  .thumb { overflow: hidden; border-radius: 6px;
+    img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.9,.2,1); }
+  }
+
+  .card-title, h3 { font-size: 1.05rem; margin: 10px 0 6px; }
+  .price { color: $primary-color; font-weight: 700; }
+
+  &:hover { transform: translateY(-8px); @include card-shadow(12px, .12); }
+
+  &.featured { border-color: $accent-color; }
+}
+
+/* Buttons */
+.btn { background: #fff; border: 1px solid #ddd; padding: $spacing-sm $spacing-md; border-radius: 6px; cursor: pointer; transition: background-color .25s ease, color .25s ease, transform .18s ease; }
+.btn.primary { background: $primary-color; color: #fff; }
+.btn:hover { transform: scale(1.05); }
+
+@include respond-to(tablet) {
+  .grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@include respond-to(desktop) {
+  .grid { grid-template-columns: repeat(4,1fr); }
+}
