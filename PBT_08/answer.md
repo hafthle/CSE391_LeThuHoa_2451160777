@@ -28,7 +28,7 @@ const tinhThueBaoHiem = luong => {
     const thue = luong > 11000000 ? luong * 0.1 : 0;
 
     return {
-        thuong: thue,
+        thuong: thue, 
         thuc_nhan: luong - thue
     };
 };
