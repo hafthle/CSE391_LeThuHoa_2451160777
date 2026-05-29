@@ -99,3 +99,18 @@ Tất cả đều là lớp bọc dùng để căn giữa và giới hạn chi�
 `.container`: hộp có chiều rộng cố định từng breakpoint (responsive max-width). Ở mỗi breakpoint có max-width khác nhau; không chiếm toàn chiều ngang, có padding bên trong. Dùng cho layout bình thường, article, blog.
 `.container-fluid`:chiếm 100% chiều rộng viewport (full-width) ở mọi kích thước. Thường dùng cho background hoặc layout trải toàn trang, hero section, banner toàn màn hình.
 `.container-md`: chiếm toàn chiều rộng (100%) dưới breakpoint đó, và chuyển thành container cố định (max-width) từ breakpoint đó trở lên. Ví dụ .container-md là full-width dưới md, và từ md (>=768px) trở lên sẽ có max-width tương ứng breakpoint md.
+
+
+#### Câu C1 (10đ) — Tùy biến Bootstrap
+- Các bước; 
+1. Xác định biến SASS dùng cho màu chủ đạo (ví dụ ` $primary` hoặc `$primary-color`).
+2. Thay giá trị biến bằng `#E63946` trong file biến SASS.
+3. Biên dịch lại SCSS sang CSS bằng Dart Sass (`sass`) hoặc chạy task build của project.
+
+
+Tại sao KHÔNG nên override trực tiếp ` .btn-primary { background: red; }`
+- **Bảo trì:** Thay đổi biến một chỗ cập nhật toàn site; override selector phải sửa nhiều chỗ.
+- **Nhất quán giao diện:** Các thành phần khác (border, hover, focus, disabled) thường dùng cùng biến — dùng biến giữ tất cả đồng bộ.
+- **Theming & reuse:** Dễ tạo theme (ví dụ light/dark) hoặc đổi nhanh bằng cách thay vài biến, không phải tìm/replace CSS.
+- **Phép toán màu:** SASS cho phép dùng `lighten()`, `darken()`, `mix()` trên biến màu để tự sinh hover/active tự động.
+- **Tránh vấn đề specificity/cascade:** Việc ghi đè selector có thể cần `!important` hoặc selectors phức tạp; biến tránh rối này. 
