@@ -326,6 +326,54 @@ Giải thích từng bước:
 1. `.filter()` — giữ lại đơn completed và total > 100000, gộp 2 if thành 1 điều kiện
 2. `.map()` + destructuring — lấy đúng field cần, tính discount và finalTotal ngay trong map
 3. `.sort()` — sắp xếp giảm dần theo finalTotal, thay bubble sort tay
-
 ---
+### C2 — Thiết kế API - Tự viết miniArray
+    const miniArray = {
 
+        // giống Array.prototype.map
+        map(arr, fn) {
+            const kq = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                kq.push(fn(arr[i], i, arr));
+            }
+
+            return kq;
+        },
+
+        // giống Array.prototype.filter
+        filter(arr, fn) {
+            const kq = [];
+
+            for (let i = 0; i < arr.length; i++) {
+
+                // nếu callback trả về true
+                if (fn(arr[i], i, arr)) {
+                    kq.push(arr[i]);
+                }
+            }
+
+            return kq;
+        },
+
+        // giống Array.prototype.reduce
+        reduce(arr, fn, initialValue) {
+
+            let ketQua = initialValue;
+
+            for (let i = 0; i < arr.length; i++) {
+                ketQua = fn(ketQua, arr[i], i, arr);
+            }
+
+            return ketQua;
+        }
+    };
+
+    // ===== TEST =====
+
+    console.log(miniArray.map([1, 2, 3], x => x * 2));
+    // → [2, 4, 6]
+    console.log(miniArray.filter([1, 2, 3, 4], x => x > 2));
+    // → [3, 4]
+    console.log(miniArray.reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+    // → 10
