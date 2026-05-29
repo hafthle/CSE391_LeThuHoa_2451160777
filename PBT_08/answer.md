@@ -260,3 +260,72 @@ hoặc:
 ```js id="u3c5ew"
 JSON.parse(JSON.stringify(product))
 ```
+
+
+
+## C. Suy luận
+
+---
+
+### C1 — Refactor processOrders
+
+**Code cũ:**
+
+```js
+function processOrders(orders) {
+    var result = [];
+    for (var i = 0; i < orders.length; i++) {
+        if (orders[i].status === "completed") {
+            if (orders[i].total > 100000) {
+                var item = {};
+                item.id = orders[i].id;
+                item.customer = orders[i].customer;
+                item.total = orders[i].total;
+                item.discount = orders[i].total * 0.1;
+                item.finalTotal = orders[i].total - item.discount;
+                result.push(item);
+            }
+        }
+    }
+    for (var j = 0; j < result.length; j++) {
+        for (var k = j + 1; k < result.length; k++) {
+            if (result[j].finalTotal < result[k].finalTotal) {
+                var temp = result[j];
+                result[j] = result[k];
+                result[k] = temp;
+            }
+        }
+    }
+    return result;
+}
+```
+
+Vấn đề của code cũ:
+- Dùng `var` — dễ gây lỗi scope không mong muốn
+- Lồng 2 tầng `if` — đọc khó
+- Tạo object thủ công từng field — dài dòng
+- Dùng bubble sort bằng tay thay vì `.sort()`
+
+**Viết lại ≤ 10 dòng:**
+
+```js
+const processOrders = orders =>
+    orders
+        .filter(o => o.status === "completed" && o.total > 100000)
+        .map(({ id, customer, total }) => ({
+            id,
+            customer,
+            total,
+            discount: total * 0.1,
+            finalTotal: total * 0.9
+        }))
+        .sort((a, b) => b.finalTotal - a.finalTotal);
+```
+
+Giải thích từng bước:
+1. `.filter()` — giữ lại đơn completed và total > 100000, gộp 2 if thành 1 điều kiện
+2. `.map()` + destructuring — lấy đúng field cần, tính discount và finalTotal ngay trong map
+3. `.sort()` — sắp xếp giảm dần theo finalTotal, thay bubble sort tay
+
+---
+
