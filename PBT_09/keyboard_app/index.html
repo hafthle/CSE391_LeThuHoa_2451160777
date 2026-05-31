@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoView</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-title">PhotoView</div>
+        <div class="topbar-hint">Ctrl+K = lệnh &nbsp;|&nbsp; ← → chuyển ảnh &nbsp;|&nbsp; Space slideshow</div>
+    </div>
+
+    <section class="viewer-section" id="viewerSection">
+        <h2 class="section-title">Bộ sưu tập</h2>
+        <p class="key-guide">Phím 1–9 nhảy nhanh &nbsp;·&nbsp; Click ảnh xem lớn</p>
+
+        <div class="viewer-row">
+            <button class="arrow-btn" id="prevPhoto" aria-label="Ảnh trước">&#8592;</button>
+
+            <div class="photo-stage" id="photoStage">
+                <img id="mainPhoto" src="" alt="" />
+                <div class="photo-caption" id="mainCaption"></div>
+                <div class="photo-num" id="photoNum"></div>
+            </div>
+
+            <button class="arrow-btn" id="nextPhoto" aria-label="Ảnh sau">&#8594;</button>
+        </div>
+
+        <div class="thumb-strip" id="thumbStrip" role="list"></div>
+        <p class="slide-status" id="slideStatus" aria-live="polite"></p>
+    </section>
+
+    <!-- lightbox -->
+    <div class="lb-wrap hide" id="lbWrap" role="dialog" aria-modal="true">
+        <div class="lb-bg" id="lbBg"></div>
+        <div class="lb-body" id="lbBody">
+            <button class="lb-close" id="lbClose" aria-label="Đóng">✕</button>
+            <img id="lbPhoto" src="" alt="">
+            <p id="lbCaption"></p>
+        </div>
+    </div>
+
+    <!-- command palette -->
+    <div class="palette-wrap hide" id="paletteWrap" role="dialog" aria-modal="true">
+        <div class="palette-bg" id="paletteBg"></div>
+        <div class="palette-box" id="paletteBox">
+            <input id="palettSearch" type="text" placeholder="Tìm lệnh..." autocomplete="off" aria-label="Tìm lệnh">
+            <ul id="cmdItems" role="listbox"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
