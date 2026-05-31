@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">TechStore</div>
+        <div class="nav-actions">
+            <button class="toggle-theme" id="themeBtn">☀ Sáng</button>
+            <div class="cart-wrap">
+                <span class="cart-text">Giỏ hàng</span>
+                <span class="cart-count hide" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside class="filters-col">
+            <div class="filter-block">
+                <p class="filter-label">Tìm kiếm</p>
+                <input type="text" id="searchBox" placeholder="Tên sản phẩm..." class="search-box">
+            </div>
+            <div class="filter-block">
+                <p class="filter-label">Danh mục</p>
+                <div id="catList"></div>
+            </div>
+            <div class="filter-block">
+                <p class="filter-label">Sắp xếp</p>
+                <select id="sortPicker" class="sort-picker">
+                    <option value="">Mặc định</option>
+                    <option value="price-low">Giá thấp nhất</option>
+                    <option value="price-high">Giá cao nhất</option>
+                    <option value="az">Tên A → Z</option>
+                    <option value="top-rated">Đánh giá cao</option>
+                </select>
+            </div>
+        </aside>
+
+        <div class="items-area" id="itemsArea"></div>
+    </div>
+
+    <div class="overlay hide" id="overlay"></div>
+    <div class="detail-popup hide" id="detailPopup"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
