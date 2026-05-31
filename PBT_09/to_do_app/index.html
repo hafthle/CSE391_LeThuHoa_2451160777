@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <div class="panel-top">
+                <h1 class="app-title">my tasks.</h1>
+                <span class="remaining-count">0 việc còn lại</span>
+            </div>
+
+            <div class="input-row">
+                <input class="task-input" id="taskInput" type="text" placeholder="Thêm việc cần làm..." autocomplete="off">
+                <button class="btn-add" id="btnAdd">+</button>
+            </div>
+
+            <div class="tab-row">
+                <button class="tab active" data-view="all">Tất cả</button>
+                <button class="tab" data-view="pending">Chưa xong</button>
+                <button class="tab" data-view="done">Đã xong</button>
+            </div>
+
+            <ul class="task-list" id="taskList"></ul>
+
+            <div class="bottom-bar">
+                <span class="count-label" id="countLabel">0 việc còn lại</span>
+                <button class="btn-clear" id="btnClear">Xóa đã xong</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
