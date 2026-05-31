@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Register</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="register-layout">
+
+        <section class="register-panel">
+
+            <div class="panel-header">
+                <h1>Tạo tài khoản mới</h1>
+                <p>Điền đầy đủ thông tin để tiếp tục</p>
+            </div>
+
+            <div class="form-container">
+
+                <!-- FULLNAME -->
+
+                <div class="input-block">
+
+                    <label for="nameInput">
+                        Họ tên
+                    </label>
+
+                    <div class="field-box">
+
+                        <input
+                            type="text"
+                            id="nameInput"
+                            placeholder="Ví dụ: Trần Minh Anh"
+                        >
+
+                        <span
+                            class="status-icon"
+                            id="nameIcon"
+                        ></span>
+
+                    </div>
+
+                    <small
+                        class="validate-message"
+                        id="nameMsg"
+                    ></small>
+
+                </div>
+
+                <!-- EMAIL -->
+
+                <div class="input-block">
+
+                    <label for="emailInput">
+                        Email
+                    </label>
+
+                    <div class="field-box">
+
+                        <input
+                            type="text"
+                            id="emailInput"
+                            placeholder="yourmail@gmail.com"
+                        >
+
+                        <span
+                            class="status-icon"
+                            id="emailIcon"
+                        ></span>
+
+                    </div>
+
+                    <small
+                        class="validate-message"
+                        id="emailMsg"
+                    ></small>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-block">
+
+                    <label for="passwordInput">
+                        Mật khẩu
+                    </label>
+
+                    <div class="field-box">
+
+                        <input
+                            type="password"
+                            id="passwordInput"
+                            placeholder="Nhập mật khẩu"
+                        >
+
+                        <span
+                            class="status-icon"
+                            id="passwordIcon"
+                        ></span>
+
+                    </div>
+
+                    <div class="password-meter">
+                        <div id="strengthFill"></div>
+                    </div>
+
+                    <small
+                        class="validate-message"
+                        id="passwordMsg"
+                    ></small>
+
+                </div>
+
+                <!-- CONFIRM -->
+
+                <div class="input-block">
+
+                    <label for="confirmInput">
+                        Xác nhận mật khẩu
+                    </label>
+
+                    <div class="field-box">
+
+                        <input
+                            type="password"
+                            id="confirmInput"
+                            placeholder="Nhập lại mật khẩu"
+                        >
+
+                        <span
+                            class="status-icon"
+                            id="confirmIcon"
+                        ></span>
+
+                    </div>
+
+                    <small
+                        class="validate-message"
+                        id="confirmMsg"
+                    ></small>
+
+                </div>
+
+                <!-- PHONE -->
+
+                <div class="input-block">
+
+                    <label for="phoneInput">
+                        Số điện thoại
+                    </label>
+
+                    <div class="field-box">
+
+                        <input
+                            type="text"
+                            id="phoneInput"
+                            maxlength="12"
+                            placeholder="0901-234-567"
+                        >
+
+                        <span
+                            class="status-icon"
+                            id="phoneIcon"
+                        ></span>
+
+                    </div>
+
+                    <small
+                        class="validate-message"
+                        id="phoneMsg"
+                    ></small>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button
+                    id="submitBtn"
+                    disabled
+                >
+                    Tạo tài khoản
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SUCCESS POPUP -->
+
+    <section
+        id="successModal"
+        class="modal-hidden"
+    >
+
+        <div id="successOverlay"></div>
+
+        <article class="modal-box">
+
+            <div class="modal-check">
+                ✓
+            </div>
+
+            <h2>Đăng ký thành công</h2>
+
+            <div id="successInfo"></div>
+
+            <button id="closeSuccess">
+                Đóng cửa sổ
+            </button>
+
+        </article>
+
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
